@@ -8,7 +8,7 @@ function App() {
     setLoading(true);
     setTimeout(()=>{
       setLoading(false);
-    }, 2000);
+    }, 3000);
   }, []);
   useEffect(() => {
     fetch("https://api.jikan.moe/v4/top/anime?limit=10")
@@ -26,10 +26,11 @@ function App() {
             
             <Grid.Col lg={6} xs={7}>
               <Card style={{width: 500, margin: 20}} shadow="sm" padding='lg' radius='lg' withBorder>
-                <Title order={2}>
-                  {anime.title}
+                <Title order={2}>{anime.title}</Title>
                   <Title order={3}>Rank {anime.rank} </Title>
-                </Title>
+                  <Title order={4}>⭐{anime.score}</Title>
+                  <Title order={5}>{anime.genres[0].name}</Title>
+                
                 <a target='_blank' href={anime.url}><Image width='320' height='auto' mx='auto' radius='md' alt={anime.title} src={anime["images"]["jpg"].image_url}></Image></a>
                 <Spoiler maxHeight={100} showLabel="Show more" hideLabel="Hide">
                 <Text>
