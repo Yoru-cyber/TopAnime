@@ -20,12 +20,13 @@ function App() {
     {loading?(<><Center h={500}><Image src="https://gifdb.com/images/high/cute-levi-motion-chibi-artwork-eodsifvum00tzf3x.gif" style={{width: 200, height: 150}}></Image></Center><Text>Somebody has to clean</Text><Loader variant="dots" color="white"></Loader></>):(
       <MantineProvider theme={{colorScheme: 'dark'}}>
         <Title order={1}>Top Anime</Title>
+        <br></br>
         <Grid>
         
           {data["data"]?.map((anime) => (
             
-            <Grid.Col lg={6} xs={7}>
-              <Card style={{width: 500, margin: 20}} shadow="sm" padding='lg' radius='lg' withBorder>
+            <Grid.Col lg={6} xs={3}>
+              <Card style={{width: 'fit-content', margin: 'auto'}} shadow='sm' padding='sm' radius='lg' withBorder>
                 <Title order={2}>{anime.title}</Title>
                   <Title order={3}>Rank {anime.rank} </Title>
                   <Title order={4}>⭐{anime.score}</Title>
